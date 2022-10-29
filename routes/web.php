@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SettingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +23,5 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::get('/dashboard', [DashboardController::class, 'view']);
+Route::get('/dashboard/setting', [SettingController::class, 'view']);
