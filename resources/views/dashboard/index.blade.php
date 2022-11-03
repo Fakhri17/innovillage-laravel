@@ -107,7 +107,7 @@
       </div>
       <div class="my-10">
         <div class="row">
-          <div class="col">
+          <div class="col-lg-10">
             <div class="card">
               <div class="card-body">
                 <div class="d-flex align-items-center">
@@ -122,19 +122,12 @@
               </div>
             </div>
           </div>
-          <div class="col-auto">
+          <div class="col-lg-2">
             <div class="card">
               <div class="card-body">
-                <div class="d-flex align-items-center">
-                  <div class="subheader">ON / OFF Pompa</div>
-                </div>
-                <div class="mt-10">
-                  
-                  <label class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox">
-                  </label>
-                </div>
-                
+                <p class="mb-0">Status Pompa</p>
+                <p class="mb-2">Saat Ini</p>
+                <h2>Mati</h2>
               </div>
             </div>
           </div>

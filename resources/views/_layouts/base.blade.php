@@ -6,6 +6,7 @@
     <title>@yield('title') | Innovilage Laravel</title>
     <link rel="stylesheet" href="https://unpkg.com/@webpixels/css@1.0/dist/index.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     @yield('style')
   </head>
   <body  style="background-color: #DAFFD3;">
@@ -14,10 +15,12 @@
     {{--    <script src="https://www.googletagmanager.com/gtag/js?id=G-9922XFPMSX"></script>--}}
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
       new LazyLoad({
         // Your custom settings go here
       });
     </script>
+    @yield('script')
   </body>
 </html>
