@@ -25,3 +25,11 @@ Route::get('/login', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'view']);
 Route::get('/dashboard/setting', [SettingController::class, 'view']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
