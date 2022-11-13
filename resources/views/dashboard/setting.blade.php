@@ -23,10 +23,12 @@
                 <h4 class="mb-3 font-bold">PPM</h4>
                 <div class="row mb-3 align-items-center">
                   <div class="col">
-                    <div class="input-group mb-3">
+                    <div class="mb-3">
+                      <label class="form-label mb-0" for="ppmInputMax">500 ppm max</label>
                       <input type="number" name="ppmValueMax" id="ppmInputMax" class="form-control" placeholder="PPM MAKSIMAL">
                     </div>
-                    <div class="input-group">
+                    <div class="">
+                      <label class="form-label mb-0" for="ppmInputMin">500 ppm min</label>
                       <input type="number" name="ppmValueMin" id="ppmInputMin" class="form-control" placeholder="PPM MINIMAL">
                     </div>
                   </div>
@@ -39,10 +41,12 @@
                 <h4 class="mb-3 font-bold">PH</h4>
                 <div class="row align-items-center mb-3">
                   <div class="col">
-                    <div class="input-group mb-3">
+                    <div class="mb-3">
+                      <label class="form-label mb-0" for="phInputMax">500 ph max</label>
                       <input type="number" name="phValueMax" id="phInputMax" class="form-control" placeholder="PH MAKSIMAL">
                     </div>
-                    <div class="input-group">
+                    <div class="">
+                      <label class="form-label mb-0" for="phInputMin">500 ph max</label>
                       <input type="number" name="phValueMin" id="phInputMin" class="form-control" placeholder="PH MINIMAL">
                     </div>
                   </div>
@@ -55,15 +59,19 @@
                 <h4 class="mb-3 font-bold">Pompa</h4>
                 <div class="row align-items-center mb-5">
                   <div class="col">
-                    <p class="text-muted">Waktu Mati</p>
-                    <div class="input-group mb-5">      
-                      <span class="p-4 input-group-text bg-orange-400 text-white"><i class="ti ti-alarm" style="font-size: 27px;"></i></span>
-                      <input type="text" class="form-control" id="timeOfPompa" placeholder="Waktu Mati">
+                    <div class="mb-5">
+                      <label class="form-label mb-0" for="timeOfPompa">Waktu Mati</label>
+                      <div class="input-group">
+                        <span class="p-4 input-group-text bg-orange-400 text-white"><i class="ti ti-alarm" style="font-size: 27px;"></i></span>
+                        <input type="text" class="form-control" id="timeOfPompa" placeholder="Waktu Mati">
+                      </div>      
                     </div>
-                    <p class="text-muted">Waktu Hidup</p>
-                    <div class="input-group">      
-                      <span class="p-4 input-group-text bg-orange-400 text-white"><i class="ti ti-alarm" style="font-size: 27px;"></i></span>
-                      <input type="text" class="form-control" id="timeOnPompa" placeholder="Waktu Hidup">
+                    <div class="">
+                      <label class="form-label mb-0" for="timeOnPompa">Waktu Nyala</label>
+                      <div class="input-group">
+												<span class="p-4 input-group-text bg-orange-400 text-white"><i class="ti ti-alarm" style="font-size: 27px;"></i></span>
+												<input type="text" class="form-control" id="timeOnPompa" placeholder="Waktu Hidup">
+                      </div>      
                     </div>
                   </div>
                   <div class="col">

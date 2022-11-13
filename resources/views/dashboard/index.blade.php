@@ -20,10 +20,10 @@
                 </div>
                 <div class="col">
                   <div class="font-bolder">
-                    Senin
+                    Hari Tanam
                   </div>
                   <div class="font-weight-medium">
-                    02 November 2022
+                    10 Hari
                   </div>
                 </div>
               </div>
