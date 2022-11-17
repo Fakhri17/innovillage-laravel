@@ -23,5 +23,5 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/dashboard', [DashboardController::class, 'view']);
-Route::get('/dashboard/setting', [SettingController::class, 'view']);
+Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard/setting', [SettingController::class, 'index']);

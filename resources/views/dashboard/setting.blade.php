@@ -3,6 +3,7 @@
 @section('title', "Dashboard Setting")
 
 @section('content')
+{{-- {{dd ($hydroDataController)}} --}}
     <div class="my-20">
       <div class="container">
         <div class="card">
@@ -24,17 +25,17 @@
                 <div class="row mb-3 align-items-center">
                   <div class="col">
                     <div class="mb-3">
-                      <label class="form-label mb-0" for="ppmInputMax">500 ppm max</label>
+                      <label class="form-label mb-0" for="ppmInputMax">{{ $hydroDataController[0]->data_ppm->max_ppm }} ppm max</label>
                       <input type="number" name="ppmValueMax" id="ppmInputMax" class="form-control" placeholder="PPM MAKSIMAL">
                     </div>
                     <div class="">
-                      <label class="form-label mb-0" for="ppmInputMin">500 ppm min</label>
+                      <label class="form-label mb-0" for="ppmInputMin">{{ $hydroDataController[0]->data_ppm->min_ppm }} ppm min</label>
                       <input type="number" name="ppmValueMin" id="ppmInputMin" class="form-control" placeholder="PPM MINIMAL">
                     </div>
                   </div>
                   <div class="col">
                    <p>PPM saat ini</p>
-                   <h1>75</h1>
+                   <h1>{{ $hydroDataController[0]->data_ppm->ppm_value }}</h1>
                   </div>  
                 </div>
                 <hr class="my-5 bg-secondary"/>
@@ -42,17 +43,17 @@
                 <div class="row align-items-center mb-3">
                   <div class="col">
                     <div class="mb-3">
-                      <label class="form-label mb-0" for="phInputMax">500 ph max</label>
+                      <label class="form-label mb-0" for="phInputMax">{{ $hydroDataController[0]->data_ph->max_ph }} ph max</label>
                       <input type="number" name="phValueMax" id="phInputMax" class="form-control" placeholder="PH MAKSIMAL">
                     </div>
                     <div class="">
-                      <label class="form-label mb-0" for="phInputMin">500 ph max</label>
+                      <label class="form-label mb-0" for="phInputMin">{{ $hydroDataController[0]->data_ph->min_ph }} ph min</label>
                       <input type="number" name="phValueMin" id="phInputMin" class="form-control" placeholder="PH MINIMAL">
                     </div>
                   </div>
                   <div class="col">
                     <p>PH saat ini</p>
-                    <h1>75</h1>
+                    <h1>{{ $hydroDataController[0]->data_ph->ph_value }}</h1>
                   </div>  
                 </div>
                 <hr class="my-5 bg-secondary"/>

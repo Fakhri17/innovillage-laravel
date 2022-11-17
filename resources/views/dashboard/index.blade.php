@@ -3,6 +3,7 @@
 @section('title', "Dashboard")
 
 @section('content')
+{{ dd($hydroStatistik) }}
   <div class="my-20">
     <div class="container">
       <div class="mb-5">
