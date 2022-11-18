@@ -2,6 +2,17 @@
 
 @section('title', "Dashboard Setting")
 
+@php
+    date_default_timezone_set("Asia/Jakarta");
+    $timeOn = $hydroDataController[0]->time_on;
+    $timeOff = $hydroDataController[0]->time_off;
+    $timeNow = date("H:i:s");
+    $strTimeOn = strtotime($timeOn);
+    $strTimeOff = strtotime($timeOff);
+    $strTimeNow = strtotime($timeNow);
+@endphp
+
+
 @section('content')
 {{-- {{dd ($hydroDataController)}} --}}
     <div class="my-20">
@@ -14,7 +25,8 @@
             <form action="">
               <div class="mb-3">
                 <div>
-                  <h4 class="mb-3 font-bold">Atur Tanggal Tanam</h4>
+                  <h4 class="mb-3 font-bold">Atur Tanggal Tanam  </h4>
+                 
                   <div class="input-group w-lg-1/4">      
                     <span class="p-4 input-group-text bg-orange-400 text-white"><i class="ti ti-calendar-event" style="font-size: 27px;"></i></span>
                     <input type="text" class="form-control" id="datePickerPlant" placeholder="Masukkan Tanggal">
@@ -77,7 +89,11 @@
                   </div>
                   <div class="col">
                     <p>Status Pompa</p>
-                    <h1>Mati</h1>
+                    @if ($strTimeNow >= $strTimeOn && $strTimeNow <= $strTimeOff)
+                      <h1>Hidup ( nyala )</h1>
+                    @else
+                      <h1>Mati</h1>
+                    @endif
                   </div>
                 </div>
                 <a type="submit" href="#" class="btn btn-warning me-lg-3">Save Change</a>
