@@ -25,3 +25,5 @@ Route::get('/login', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/dashboard/setting', [SettingController::class, 'index']);
+Route::post('/dashboard/setting/update', [SettingController::class, 'updatePpmMax']);
+Route::post('/dashboard/setting/update', [SettingController::class, 'updatePpmMin']);

@@ -22,7 +22,22 @@
             <h3 class="mb-0">Setting Menu</h3>
           </div>
           <div class="card-body">
-            <form action="">
+            <form enctype="multipart/form-data" method="POST" action="{{ url("/dashboard/setting/update") }}">
+              @csrf
+              @if ($errors->any())
+                <div class="alert alert-danger">
+                  <ul>
+                    @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                    @endforeach
+                  </ul>
+                </div>
+              @endif
+              @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+              @endif
               <div class="mb-3">
                 <div>
                   <h4 class="mb-3 font-bold">Atur Tanggal Tanam  </h4>
@@ -38,11 +53,11 @@
                   <div class="col">
                     <div class="mb-3">
                       <label class="form-label mb-0" for="ppmInputMax">{{ $hydroDataController[0]->data_ppm->max_ppm }} ppm max</label>
-                      <input type="number" name="ppmValueMax" id="ppmInputMax" class="form-control" placeholder="PPM MAKSIMAL">
+                      <input type="number" name="ppmMax" id="ppmInputMax" class="form-control" placeholder="PPM MAKSIMAL">
                     </div>
                     <div class="">
                       <label class="form-label mb-0" for="ppmInputMin">{{ $hydroDataController[0]->data_ppm->min_ppm }} ppm min</label>
-                      <input type="number" name="ppmValueMin" id="ppmInputMin" class="form-control" placeholder="PPM MINIMAL">
+                      <input type="number" name="ppmMin" id="ppmInputMin" class="form-control" placeholder="PPM MINIMAL">
                     </div>
                   </div>
                   <div class="col">
@@ -96,7 +111,7 @@
                     @endif
                   </div>
                 </div>
-                <a type="submit" href="#" class="btn btn-warning me-lg-3">Save Change</a>
+                <button type="submit" class="btn btn-warning me-lg-3">Save Change</button>
               </div>
             </form>
           </div>
