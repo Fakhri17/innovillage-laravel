@@ -27,4 +27,18 @@ class Controller extends BaseController
 
         return json_decode($response->getBody());
     }
+
+    protected function readWeatherApi($uri, $city){
+        $client = new Client(); //GuzzleHttp\Client
+        $apiUrl = env('OPENWEATHERMAP_API_URL') . $uri;
+        $response = $client->request('GET', $apiUrl, [
+            'query' => [
+                'q' => $city,
+                'appid' => env('OPENWEATHERMAP_API_KEY'),
+                'lang' => "id",
+            ],
+        ]);
+
+        return json_decode($response->getBody());
+    }
 }

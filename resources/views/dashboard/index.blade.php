@@ -36,16 +36,17 @@
               <div class="row align-items-center">
                 <div class="col-auto">
                   <span class="bg-orange-400 text-white avatar">
-                    <i class="ti ti-sun"  style="font-size: 27px;"></i>
+                    <i class="ti ti-cloud"  style="font-size: 27px;"></i>
                   </span>
                 </div>
                 <div class="col">
-                  <div class="font-bolder">
-                    Cerah
-                  </div>
                   <div class="font-weight-medium">
                     Kondisi Cuaca
                   </div>
+                  <div class="font-bolder text-capitalize">
+                    {{ $weather->weather[0]->description }}
+                  </div>
+                  
                 </div>
               </div>
             </div>
@@ -96,7 +97,7 @@
                   </span>
                 </div>
                 <div class="col-auto">
-                  <div class="h1">75<span>&#8451;</span></div>
+                  <div class="h1">{{ intval($weather->main->temp) - 273 }}<span>&#8451;</span></div>
                   <div class="font-weight-medium">Suhu saat ini</div>
                 </div>
               </div>
