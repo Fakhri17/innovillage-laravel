@@ -23,6 +23,8 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::get('/dashboard/setting', [SettingController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/setting', [SettingController::class, 'index'])->middleware('auth');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/dashboard/setting/update', [SettingController::class, 'updatePonic']);
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
