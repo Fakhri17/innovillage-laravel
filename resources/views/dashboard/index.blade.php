@@ -135,8 +135,8 @@
         </div>
       </div>
       <div>
-        <a href="#" class="btn btn-warning me-lg-3">Logout</a>
-        <a href="#" class="btn btn-warning">Pengaturan</a>
+        <a href="{{ url("/logout") }}" class="btn btn-warning me-lg-3">Logout</a>
+        <a href="{{ url("/dashboard/setting") }}" class="btn btn-warning">Pengaturan</a>
       </div>
     </div>
   </div>

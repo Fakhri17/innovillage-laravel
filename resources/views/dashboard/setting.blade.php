@@ -106,7 +106,7 @@
                   </div>
                   <div class="col">
                     <p>Status Pompa</p>
-                    @if ($strTimeNow >= $strTimeOn && $strTimeNow <= $strTimeOff)
+                    @if ($hydroDataController[0]->pompa != 0)
                       <h1>Hidup ( nyala )</h1>
                     @else
                       <h1>Mati</h1>
