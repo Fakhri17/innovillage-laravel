@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SettingController;
@@ -15,13 +16,9 @@ use App\Http\Controllers\SettingController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [IndexController::class, 'index']);
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login',[LoginController::class, 'index']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/setting', [SettingController::class, 'index'])->middleware('auth');
