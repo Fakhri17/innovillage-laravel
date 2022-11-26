@@ -12,7 +12,7 @@
         <p class="alert alert-danger">{{ $err }}</p>
       @endforeach
     @endif
-      <div class="m-auto my-5" style="max-width: 500px; background-color: #6AA062;">
+      <div class="m-auto my-5 rounded" style="max-width: 500px; background-color: #6AA062;">
        
         <form  method="POST" action="{{ url("/login") }}" class="p-5 text-white">
           @csrf

@@ -19,10 +19,10 @@
   <div class="my-20">
     <div class="container">
       <div class="mb-5">
-        <h1>Welcome to dashboard menu</h1>
+        <h1> Selamat Datang Di Halaman Statistik </h1>
       </div>
       <div class="row justify-content-start">
-        <div class="col-auto d-flex align-items-stretch">
+        <div class="col-12 col-lg-auto d-lg-flex align-items-stretch mb-lg-0 mb-3">
           <div class="card card-sm">
             <div class="card-body">
               <div class="row align-items-center">
@@ -49,7 +49,7 @@
             </div>
           </div>
         </div>
-        <div class="col-auto d-flex align-items-stretch">
+        <div class="col-12 col-lg-auto d-lg-flex align-items-stretch mb-lg-0 mb-3">
           <div class="card card-sm">
             <div class="card-body">
               <div class="row align-items-center">
@@ -71,7 +71,7 @@
             </div>
           </div>
         </div>
-        <div class="col-auto d-flex align-items-stretch">
+        <div class="col-12 col-lg-auto d-lg-flex align-items-stretch">
           <div class="card">
             <div class="card-body">
              
@@ -92,7 +92,7 @@
         </div>
       </div>
       <div class="row my-10">
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 mb-3 mb-lg-0">
           <div class="card">
             <div class="card-body">
               <div class="d-flex align-items-center">
@@ -107,7 +107,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 mb-3 mb-lg-0">
           <div class="card">
             <div class="card-body">
               <div class="d-flex align-items-center">
@@ -122,7 +122,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 mb-3 mb-lg-0">
           <div class="card">
             <div class="card-body">
               <p class="mb-0">Status Pompa</p>

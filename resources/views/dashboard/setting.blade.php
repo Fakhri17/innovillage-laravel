@@ -53,7 +53,7 @@
                 <hr class="my-5 bg-secondary"/>
                 <h4 class="mb-3 font-bold">PPM</h4>
                 <div class="row mb-3 align-items-center">
-                  <div class="col">
+                  <div class="col-12 col-lg-6">
                     <div class="mb-3">
                       <label class="form-label mb-0" for="ppmInputMax">PPM max : {{ $dataController->data_ppm->max_ppm }} </label>
                       <input type="number" name="ppmMax" id="ppmInputMax" class="form-control" placeholder="PPM MAKSIMAL">
@@ -63,7 +63,7 @@
                       <input type="number" name="ppmMin" id="ppmInputMin" class="form-control" placeholder="PPM MINIMAL">
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="col-12 col-lg-6 order-first order-lg-last mb-5 mb-lg-0">
                    <p>PPM saat ini</p>
                    <h1>{{ $dataController->data_ppm->ppm_value }}</h1>
                   </div>  
@@ -71,7 +71,7 @@
                 <hr class="my-5 bg-secondary"/>
                 <h4 class="mb-3 font-bold">PH</h4>
                 <div class="row align-items-center mb-3">
-                  <div class="col">
+                  <div class="col-12 col-lg-6">
                     <div class="mb-3">
                       <label class="form-label mb-0" for="phInputMax">PH max : {{ $dataController->data_ph->max_ph }}</label>
                       <input type="number" name="phMax" step="0.1" id="phInputMax" class="form-control" placeholder="PH MAKSIMAL">
@@ -81,7 +81,7 @@
                       <input type="number" name="phMin" step="0.1" id="phInputMin" class="form-control" placeholder="PH MINIMAL">
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="col-12 col-lg-6 order-first order-lg-last mb-5 mb-lg-0">
                     <p>PH saat ini</p>
                     <h1>{{ $dataController->data_ph->ph_value }}</h1>
                   </div>  
@@ -89,7 +89,7 @@
                 <hr class="my-5 bg-secondary"/>
                 <h4 class="mb-3 font-bold">Pompa</h4>
                 <div class="row align-items-center mb-5">
-                  <div class="col">
+                  <div class="col-12 col-lg-6">
                     <div class="mb-5">
                       <label class="form-label mb-0" for="timeOfPompa">Waktu Mati : {{ $timeOff }}</label>
                       <div class="input-group">
@@ -105,7 +105,7 @@
                       </div>      
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="col-12 col-lg-6 order-first order-lg-last mb-5 mb-lg-0">
                     <p>Status Pompa</p>
                     @if ($dataController->pompa != 0)
                       <h1>Hidup ( nyala )</h1>
