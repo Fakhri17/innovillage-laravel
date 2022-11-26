@@ -113,6 +113,7 @@
                     @endif
                   </div>
                 </div>
+                <a href="{{ url("/dashboard") }}" class="btn btn-warning me-lg-3">Lihat Statistik</a>
                 <button type="submit" class="btn btn-warning me-lg-3">Save Change</button>
               </div>
             </form>
