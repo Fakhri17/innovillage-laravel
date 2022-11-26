@@ -3,9 +3,10 @@
 @section('title', "Dashboard Setting")
 
 @php
+    $dataController = $hydroDataController[array_key_last($hydroDataController)];
     date_default_timezone_set("Asia/Jakarta");
-    $timeOn = $hydroDataController[0]->time_on;
-    $timeOff = $hydroDataController[0]->time_off;
+    $timeOn = $dataController->time_on;
+    $timeOff = $dataController->time_off;
     $timeNow = date("H:i:s");
     $strTimeOn = strtotime($timeOn);
     $strTimeOff = strtotime($timeOff);
@@ -42,7 +43,7 @@
                 <div>
                   <h4 class="mb-3 font-bold">Atur Tanggal Tanam  </h4>
                   <div class="w-lg-1/4">
-                    <label class="form-label mb-0" for="datePickerPlant">Tanggal Tanam saat ini:  {{ $hydroDataController[0]->planting_date }} </label>
+                    <label class="form-label mb-0" for="datePickerPlant">Tanggal Tanam saat ini:  {{ $dataController->planting_date }} </label>
                     <div class="input-group">
                       <span class="p-4 input-group-text bg-orange-400 text-white"><i class="ti ti-calendar-event" style="font-size: 27px;"></i></span>
                       <input type="text" name="plantDate" class="form-control" id="datePickerPlant" placeholder="Masukkan Tanggal">
@@ -54,17 +55,17 @@
                 <div class="row mb-3 align-items-center">
                   <div class="col">
                     <div class="mb-3">
-                      <label class="form-label mb-0" for="ppmInputMax">PPM max : {{ $hydroDataController[0]->data_ppm->max_ppm }} </label>
+                      <label class="form-label mb-0" for="ppmInputMax">PPM max : {{ $dataController->data_ppm->max_ppm }} </label>
                       <input type="number" name="ppmMax" id="ppmInputMax" class="form-control" placeholder="PPM MAKSIMAL">
                     </div>
                     <div class="">
-                      <label class="form-label mb-0" for="ppmInputMin">PPM min : {{ $hydroDataController[0]->data_ppm->min_ppm }} </label>
+                      <label class="form-label mb-0" for="ppmInputMin">PPM min : {{ $dataController->data_ppm->min_ppm }} </label>
                       <input type="number" name="ppmMin" id="ppmInputMin" class="form-control" placeholder="PPM MINIMAL">
                     </div>
                   </div>
                   <div class="col">
                    <p>PPM saat ini</p>
-                   <h1>{{ $hydroDataController[0]->data_ppm->ppm_value }}</h1>
+                   <h1>{{ $dataController->data_ppm->ppm_value }}</h1>
                   </div>  
                 </div>
                 <hr class="my-5 bg-secondary"/>
@@ -72,17 +73,17 @@
                 <div class="row align-items-center mb-3">
                   <div class="col">
                     <div class="mb-3">
-                      <label class="form-label mb-0" for="phInputMax">PH max : {{ $hydroDataController[0]->data_ph->max_ph }}</label>
+                      <label class="form-label mb-0" for="phInputMax">PH max : {{ $dataController->data_ph->max_ph }}</label>
                       <input type="number" name="phMax" step="0.1" id="phInputMax" class="form-control" placeholder="PH MAKSIMAL">
                     </div>
                     <div class="">
-                      <label class="form-label mb-0" for="phInputMin">PH min : {{ $hydroDataController[0]->data_ph->min_ph }}</label>
+                      <label class="form-label mb-0" for="phInputMin">PH min : {{ $dataController->data_ph->min_ph }}</label>
                       <input type="number" name="phMin" step="0.1" id="phInputMin" class="form-control" placeholder="PH MINIMAL">
                     </div>
                   </div>
                   <div class="col">
                     <p>PH saat ini</p>
-                    <h1>{{ $hydroDataController[0]->data_ph->ph_value }}</h1>
+                    <h1>{{ $dataController->data_ph->ph_value }}</h1>
                   </div>  
                 </div>
                 <hr class="my-5 bg-secondary"/>
@@ -106,7 +107,7 @@
                   </div>
                   <div class="col">
                     <p>Status Pompa</p>
-                    @if ($hydroDataController[0]->pompa != 0)
+                    @if ($dataController->pompa != 0)
                       <h1>Hidup ( nyala )</h1>
                     @else
                       <h1>Mati</h1>

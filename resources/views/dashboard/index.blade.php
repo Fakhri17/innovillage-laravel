@@ -3,10 +3,12 @@
 @section('title', "Dashboard")
 
 @php
-    $plantDate = new DateTime($hydroController[0]->planting_date);
+    $dataController = $hydroController[array_key_last($hydroController)];
+    $dataStatistik = $hydroStatistik[array_key_last($hydroStatistik)];
+    $plantDate = new DateTime($dataController->planting_date);
     $dateNow = new DateTime(date("Y-m-d"));
     $interval = $plantDate->diff($dateNow);
-    $datetime1 = strtotime($hydroController[0]->planting_date);
+    $datetime1 = strtotime($dataController->planting_date);
     $datetime2 = strtotime(date("Y-m-d"));
     $secs = $datetime2 - $datetime1;// == <seconds between the two times>
     $days = $secs / 86400;
@@ -96,10 +98,10 @@
               <div class="d-flex align-items-center">
                 <div class="subheader">PPM</div>
               </div>
-              <div class="h1 mb-3">{{ $hydroStatistik[0]->ppm }}</div>
+              <div class="h1 mb-3">{{ $dataStatistik->ppm }}</div>
               <div class="progress progress-sm" style="height: 10px;">
-                <div class="progress-bar progress-bar-animated bg-orange-400" style="width: {{ $hydroStatistik[0]->ppm }}px" role="progressbar" aria-valuenow="{{ $hydroStatistik[0]->ppm }}" aria-valuemin="0" aria-valuemax="99999">
-                  <span class="visually-hidden">{{ $hydroStatistik[0]->ppm }}</span>
+                <div class="progress-bar progress-bar-animated bg-orange-400" style="width: {{ $dataStatistik->ppm }}px" role="progressbar" aria-valuenow="{{ $dataStatistik->ppm }}" aria-valuemin="0" aria-valuemax="99999">
+                  <span class="visually-hidden">{{ $dataStatistik->ppm }}</span>
                 </div>
               </div>
             </div>
@@ -111,10 +113,10 @@
               <div class="d-flex align-items-center">
                 <div class="subheader">PPH</div>
               </div>
-              <div class="h1 mb-3">{{ $hydroStatistik[0]->ph }}</div>
+              <div class="h1 mb-3">{{ $dataStatistik->ph }}</div>
               <div class="progress progress-sm" style="height: 10px;">
                 <div class="progress-bar progress-bar-animated bg-orange-400" 
-                  style="width: {{ $hydroStatistik[0]->ph }}px" role="progressbar" aria-valuenow="{{ $hydroStatistik[0]->ph }}" aria-valuemin="0" aria-valuemax="99999">
+                  style="width: {{ $dataStatistik->ph }}px" role="progressbar" aria-valuenow="{{ $dataStatistik->ph }}" aria-valuemin="0" aria-valuemax="99999">
                 </div>
               </div>
             </div>
@@ -125,7 +127,7 @@
             <div class="card-body">
               <p class="mb-0">Status Pompa</p>
               <p class="mb-2">Saat Ini</p>
-              @if ($hydroController[0]->pompa != 0)
+              @if ($dataController->pompa != 0)
                 <h2>Hidup ( nyala )</h2>
               @else
                 <h2>Mati</h2>
@@ -142,10 +144,10 @@
                 <div class="d-flex align-items-center">
                   <div class="subheader">Volume Air</div>
                 </div>
-                <div class="h1 mb-3">{{ $hydroStatistik[0]->v_air }} %</div>
+                <div class="h1 mb-3">{{ $dataStatistik->v_air }} %</div>
                 <div class="progress progress-sm" style="height: 10px;">
-                  <div class="progress-bar progress-bar-animated bg-orange-400" style="width: {{ $hydroStatistik[0]->v_air }}px" role="progressbar" aria-valuenow="{{ $hydroStatistik[0]->v_air }}" aria-valuemin="0" aria-valuemax="99999">
-                    <span class="visually-hidden">{{ $hydroStatistik[0]->v_air }}% Complete</span>
+                  <div class="progress-bar progress-bar-animated bg-orange-400" style="width: {{ $dataStatistik->v_air }}px" role="progressbar" aria-valuenow="{{ $dataStatistik->v_air }}" aria-valuemin="0" aria-valuemax="99999">
+                    <span class="visually-hidden">{{ $dataStatistik->v_air }}% Complete</span>
                   </div>
                 </div>
               </div>
