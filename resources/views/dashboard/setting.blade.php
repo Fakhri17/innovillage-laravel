@@ -114,8 +114,8 @@
                     @endif
                   </div>
                 </div>
-                <a href="{{ url("/dashboard") }}" class="btn btn-warning me-lg-3">Lihat Statistik</a>
-                <button type="submit" class="btn btn-warning me-lg-3">Save Change</button>
+                <a href="{{ url("/dashboard") }}" class="btn btn-warning me-lg-3 mb-lg-0 mb-3">Lihat Statistik</a>
+                <button type="submit" class="btn btn-warning me-lg-3 mb-lg-0 mb-3">Save Change</button>
               </div>
             </form>
           </div>
