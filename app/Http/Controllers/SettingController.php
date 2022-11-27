@@ -25,6 +25,8 @@ class SettingController extends Controller
         $min_ph = $request['phMin'];
         $time_off = $request['timeOff'];
         $time_on = $request['timeOn'];
+        $dataPompa = $request['dataPompa'];
+        $valuePompa = $dataPompa == 'on' ? 1 : 0;
 
         // This For Url Api
         $urlPlantDate = env('PONIC_API_URL') . '/api/controller/update/planting_date';
@@ -34,6 +36,8 @@ class SettingController extends Controller
         $urlPhMin = env('PONIC_API_URL') . '/api/controller/update/min_ph';
         $urlTimeOff = env('PONIC_API_URL') . '/api/controller/update/time_off';
         $urlTimeOn = env('PONIC_API_URL') . '/api/controller/update/time_on';
+        $urlPompa = env('PONIC_API_URL') . '/api/controller/update/pompa';
+
 
         // Post Data
         if ($plantDate) {
@@ -71,6 +75,9 @@ class SettingController extends Controller
                 'time_on' => $time_on.":00",
             ]);
         }
+        Http::post($urlPompa, [
+            'pompa' => $valuePompa,
+        ]);
        
        
 

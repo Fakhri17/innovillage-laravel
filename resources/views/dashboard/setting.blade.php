@@ -11,6 +11,7 @@
     $strTimeOn = strtotime($timeOn);
     $strTimeOff = strtotime($timeOff);
     $strTimeNow = strtotime($timeNow);
+    $checked = $dataController->pompa == 1 ? 'checked' : '';
 @endphp
 
 
@@ -88,6 +89,15 @@
                 </div>
                 <hr class="my-5 bg-secondary"/>
                 <h4 class="mb-3 font-bold">Pompa</h4>
+                
+                <div class="my-4">
+                  <div class="form-check form-switch d-flex ps-0 align-items-center">
+                    <span>Off</span>
+                    <input class="form-check-input mx-3" name="dataPompa" type="checkbox" role="switch" id="flexSwitchCheckDefault" {{ $checked }}>
+                    <span>On</span>
+                  </div>
+                </div>
+               
                 <div class="row align-items-center mb-5">
                   <div class="col-12 col-lg-6">
                     <div class="mb-5">
