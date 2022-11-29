@@ -12,6 +12,8 @@
     $datetime2 = strtotime(date("Y-m-d"));
     $secs = $datetime2 - $datetime1;// == <seconds between the two times>
     $days = $secs / 86400;
+    $persenAir = 1500000;
+    $volumeAir = (300 * 100 * (50 - $dataStatistik->v_air) / $persenAir) * 100;
 @endphp
 
 @section('content')
@@ -144,10 +146,10 @@
                 <div class="d-flex align-items-center">
                   <div class="subheader">Volume Air</div>
                 </div>
-                <div class="h1 mb-3">{{ $dataStatistik->v_air }} %</div>
+                <div class="h1 mb-3">{{ $volumeAir }} %</div>
                 <div class="progress progress-sm" style="height: 10px;">
-                  <div class="progress-bar progress-bar-animated bg-orange-400" style="width: {{ $dataStatistik->v_air }}px" role="progressbar" aria-valuenow="{{ $dataStatistik->v_air }}" aria-valuemin="0" aria-valuemax="99999">
-                    <span class="visually-hidden">{{ $dataStatistik->v_air }}% Complete</span>
+                  <div class="progress-bar progress-bar-animated bg-orange-400" style="width: {{ $volumeAir }}%" role="progressbar" aria-valuenow="{{ $volumeAir }}" aria-valuemin="0" aria-valuemax="100">
+                    <span class="visually-hidden">{{ $volumeAir }}% Complete</span>
                   </div>
                 </div>
               </div>
